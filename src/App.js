@@ -14,13 +14,11 @@ function App() {
   function route(e){
     setPage(e.target.name)
   }
-  let bob = false;
 
   //updates the notes in localstorage
   React.useEffect(()=>{
-    console.log('BOB', bob)
-    console.log('retrivednoted har settet notes', retrievedNotes)
     localStorage.setItem('notes', JSON.stringify(retrievedNotes))
+    console.log('retrivednoted har settet notes', retrievedNotes)
   },[retrievedNotes])
 
   // Deletenote function
@@ -32,7 +30,6 @@ function App() {
 
   //update notes
   function updateNote(event, note){
-    bob=true;
     event.preventDefault()
     event.stopPropagation()
     console.log("DIS IS NOTE",note)
